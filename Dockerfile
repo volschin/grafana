@@ -2,7 +2,5 @@ ARG GRAFANA_VERSION=10.3.1
 
 FROM grafana/grafana:$GRAFANA_VERSION
 
-COPY config/grafana-datasources.yml /etc/grafana/provisioning/datasources/provisioning-datasources.yaml
-COPY config/grafana-dashboards.yml /etc/grafana/provisioning/dashboards/provisioning-dashboards.yaml
+COPY config/ /etc/grafana/provisioning/
 COPY config/dashboards/*.json /var/lib/grafana/dashboards/
-# COPY config/dashboards/grafana-dashboard-node-metrics.json /var/lib/grafana/dashboards/node-metrics.json
